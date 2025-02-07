@@ -7,7 +7,7 @@
 
 import UIKit
 extension UITextField{
-    func setupLicensePlateKeyboardView(){
+    public func setupLicensePlateKeyboardView(){
         let keyBoard = LicensePlateKeyboardView()
         keyBoard.delegate = self
         inputView = keyBoard
