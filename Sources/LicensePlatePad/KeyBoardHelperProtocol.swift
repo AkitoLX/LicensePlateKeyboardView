@@ -9,7 +9,9 @@ import UIKit
 
 protocol KeyBoardHelperProtocol: NSObjectProtocol{
     func creatImageWithColor(color: UIColor,size: CGSize) -> UIImage?
+    @MainActor
     func creatButton(title: String, frame: CGRect, touchUpAction: Selector) -> UIButton
+    @MainActor
     func creatBackSpaceButton(frame: CGRect, action: Selector) -> UIButton
 }
 
@@ -31,6 +33,7 @@ extension KeyBoardHelperProtocol{
     /// - Parameters:
     ///   - title: 标题
     ///   - backgroundImage: 背景图片
+    @MainActor
     func creatButton(title: String, frame: CGRect, touchUpAction: Selector) -> UIButton {
         let button = KeyBoardButton.init(frame: frame)
         button.setTitle(title, for: .normal)
@@ -43,6 +46,7 @@ extension KeyBoardHelperProtocol{
     }
     
     /// 创建退格键按钮
+    @MainActor
     func creatBackSpaceButton(frame: CGRect, action: Selector) -> UIButton{
         let button = KeyBoardButton.init(frame: frame)
         button.addTarget(self, action: action, for: .touchUpInside)
@@ -58,8 +62,8 @@ extension KeyBoardHelperProtocol{
 
 
 protocol KeyBoardActionDelegate: NSObjectProtocol{
-    func buttonClick(value: String?)
-    func backSpace()
+    @MainActor func buttonClick(value: String?)
+    @MainActor func backSpace()
 }
 
 

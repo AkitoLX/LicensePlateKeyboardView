@@ -14,7 +14,7 @@ extension UITextField{
     }
 }
 
-class LicensePlatePad: UIView, KeyBoardActionDelegate{
+@MainActor class LicensePlatePad: UIView, KeyBoardActionDelegate{
     weak var delegate: KeyBoardActionDelegate?
     
     init(){
