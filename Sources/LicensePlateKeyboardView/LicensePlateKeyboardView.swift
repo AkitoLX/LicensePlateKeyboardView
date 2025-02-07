@@ -7,14 +7,14 @@
 
 import UIKit
 extension UITextField{
-    func setupLicensePlatePad(){
-        let keyBoard = LicensePlatePad()
+    func setupLicensePlateKeyboardView(){
+        let keyBoard = LicensePlateKeyboardView()
         keyBoard.delegate = self
         inputView = keyBoard
     }
 }
 
-@MainActor class LicensePlatePad: UIView, KeyBoardActionDelegate{
+@MainActor class LicensePlateKeyboardView: UIView, KeyBoardActionDelegate{
     weak var delegate: KeyBoardActionDelegate?
     
     init(){
